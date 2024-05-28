@@ -1,8 +1,4 @@
 import React from 'react'
-import InteractiveMapsLogo from '../images/InteractiveMaps.png'
-import CustomItineraries from '../images/CustomItineraries.png'
-import booking from '../images/booking.png'
-import Button from './button/Button'
 import InfoCard from './cards/InfoCard'
 
 function CardSection({button=false,title,scale=false,cardColor,bgColor,textColor,data}) {
@@ -14,7 +10,7 @@ function CardSection({button=false,title,scale=false,cardColor,bgColor,textColor
 
        {
         data.map((item,i)=>{
-            return <InfoCard button={button} scale={scale} cardColor={cardColor} heading={item.heading} description={item.description} image={item.image} />
+            return <InfoCard key={i} button={button} scale={scale} cardColor={cardColor} heading={item.heading} description={item.description} image={item.image} />
         })
        }
       </div>

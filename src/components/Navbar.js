@@ -1,7 +1,6 @@
 // ./src/components/Navbar.js
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import lightLogo from '../images/light.png'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,8 +20,8 @@ function Navbar() {
           <div className="hidden md:flex md:items-center md:space-x-8 ml-auto">
             <NavLink
               to="/"
-              exact
-              activeClassName="text-blue-500 border-b-2 border-blue-500"
+              // exact
+              // activeClassName="text-blue-500 border-b-2 border-blue-500"
               className="text-gray-800 hover:text-blue-500 transition duration-300 px-3 py-2"
             >
               Home
@@ -30,14 +29,14 @@ function Navbar() {
             
             <NavLink
               to="/services"
-              activeClassName="text-blue-500 border-b-2 border-blue-500"
+              // activeClassName="text-blue-500 border-b-2 border-blue-500"
               className="text-gray-800 hover:text-blue-500 transition duration-300 px-3 py-2"
             >
               Services
             </NavLink>
             <NavLink
               to="/contact"
-              activeClassName="text-blue-500 border-b-2 border-blue-500"
+              // activeClassName="text-blue-500 border-b-2 border-blue-500"
               className="text-gray-800 hover:text-blue-500 transition duration-300 px-3 py-2"
             >
               Contact
@@ -94,8 +93,8 @@ function Navbar() {
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <NavLink
             to="/"
-            exact
-            activeClassName="bg-gray-100 text-gray-900"
+            // exact
+            // activeClassName="bg-gray-100 text-gray-900"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100 transition duration-300"
             onClick={() => setIsOpen(false)}
           >
@@ -104,7 +103,7 @@ function Navbar() {
          
           <NavLink
             to="/services"
-            activeClassName="bg-gray-100 text-gray-900"
+            // activeClassName="bg-gray-100 text-gray-900"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100 transition duration-300"
             onClick={() => setIsOpen(false)}
           >
@@ -112,7 +111,7 @@ function Navbar() {
           </NavLink>
           <NavLink
             to="/contact"
-            activeClassName="bg-gray-100 text-gray-900"
+            // activeClassName="bg-gray-100 text-gray-900"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100 transition duration-300"
             onClick={() => setIsOpen(false)}
           >

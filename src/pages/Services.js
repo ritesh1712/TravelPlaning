@@ -5,7 +5,7 @@ import Modal from "../components/Modal";
 
 
 const Services = () => {
-  const [destination, setDestination] = useState("ritesh");
+  const [destination, setDestination] = useState("bhopal");
   const [days, setDays] = useState("5");
   const [showItinerary, setShowItinerary] = useState(false);
 
@@ -14,6 +14,23 @@ const Services = () => {
     // Validate input and show itinerary
     setShowItinerary(true);
   };
+
+const handleDrag = (e)=>{
+  e.dataTransfer.setData("element", e.target.id);
+}
+function drop(e) {
+  e.preventDefault();
+  const data = e.dataTransfer.getData("element");
+
+  console.log(e.targetx)
+
+  document.getElementById('h').appendChild(document.getElementById(data));
+  // console.log(data)
+}
+function allowDrop(e) {
+  e.preventDefault();
+}
+
 
   return (
     <div className="container mx-auto py-12 px-4 mt-12">
@@ -118,7 +135,7 @@ const Services = () => {
 
             <div className="mb-8 bg-gray-100 md:w-[30%] w-full border border-black px-5 py-5 rounded-lg">
               <h3 className="text-xl font-bold mb-4">Marked to Visited</h3>
-              <ul onDrop={()=>console.log('drop')}>
+              <ul onDrop={drop} onDragOver={allowDrop} id='h'>
                 <li className="mb-2 border border-black bg-white p-2 rounded-lg shadow-md cursor-pointer">
                   <details>
                     <summary>Place 1</summary>
@@ -154,8 +171,8 @@ const Services = () => {
 
             <div className="mb-8 bg-gray-100 md:w-[30%] w-full border border-black px-5 py-5 rounded-lg">
               <h3 className="text-xl font-bold mb-4">Not Interested</h3>
-              <ul onDrop={()=>console.log('drop')}>
-                <li className="mb-2 border border-black bg-white p-2 rounded-lg shadow-md cursor-pointer" draggable onDrag={()=>console.log('drag')}>
+              <ul>
+                <li className="mb-2 border border-black bg-white p-2 rounded-lg shadow-md cursor-pointer" id="place" draggable onDragStart={(e)=>handleDrag(e)}>
                   <details>
                     <summary>Place 1</summary>
                     <p>
