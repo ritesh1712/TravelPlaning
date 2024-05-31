@@ -2,12 +2,12 @@
 
 import React, { useState } from "react";
 import Modal from "../components/Modal";
-
+import DropBox from "../components/DropBox";
 
 const Services = () => {
   const [destination, setDestination] = useState("bhopal");
   const [days, setDays] = useState("5");
-  const [showItinerary, setShowItinerary] = useState(false);
+  const [showItinerary, setShowItinerary] = useState(true);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,22 +15,27 @@ const Services = () => {
     setShowItinerary(true);
   };
 
-const handleDrag = (e)=>{
-  e.dataTransfer.setData("element", e.target.id);
-}
-function drop(e) {
-  e.preventDefault();
-  const data = e.dataTransfer.getData("element");
+const data = [
+  {placeName:'ritesh',description:'Hello I am ritesh raghuwanshi i am from bhopal i am parsuing a mca i have a good knowage of html'},
+  {placeName:'ritesh',description:'Hello I am ritesh raghuwanshi i am from bhopal i am parsuing a mca i have a good knowage of html'},
+  {placeName:'ritesh',description:'Hello I am ritesh raghuwanshi i am from bhopal i am parsuing a mca i have a good knowage of html'},
+  {placeName:'ritesh',description:'Hello I am ritesh raghuwanshi i am from bhopal i am parsuing a mca i have a good knowage of html'},
 
-  console.log(e.targetx)
+]
+const data2 = [
+  {placeName:'ritesh1',description:'Hello I am ritesh raghuwanshi i am from bhopal i am parsuing a mca i have a good knowage of html'},
+  {placeName:'ritesh2',description:'Hello I am ritesh raghuwanshi i am from bhopal i am parsuing a mca i have a good knowage of html'},
+  {placeName:'ritesh3',description:'Hello I am ritesh raghuwanshi i am from bhopal i am parsuing a mca i have a good knowage of html'},
+  {placeName:'ritesh4',description:'Hello I am ritesh raghuwanshi i am from bhopal i am parsuing a mca i have a good knowage of html'},
 
-  document.getElementById('h').appendChild(document.getElementById(data));
-  // console.log(data)
-}
-function allowDrop(e) {
-  e.preventDefault();
-}
+]
+const data3 = [
+  {placeName:'ritesh5',description:'Hello I am ritesh raghuwanshi i am from bhopal i am parsuing a mca i have a good knowage of html'},
+  {placeName:'ritesh6',description:'Hello I am ritesh raghuwanshi i am from bhopal i am parsuing a mca i have a good knowage of html'},
+  {placeName:'ritesh7',description:'Hello I am ritesh raghuwanshi i am from bhopal i am parsuing a mca i have a good knowage of html'},
+  {placeName:'ritesh8',description:'Hello I am ritesh raghuwanshi i am from bhopal i am parsuing a mca i have a good knowage of html'},
 
+]
 
   return (
     <div className="container mx-auto py-12 px-4 mt-12">
@@ -96,134 +101,17 @@ function allowDrop(e) {
           <p className="text-gray-600 mb-2">Duration: {days} days</p>
 
           {/* Example of nearby places, modify as needed */}
-          <div className="flex flex-wrap box-border justify-between">
-            <div className="mb-8 bg-gray-100 md:w-[30%] w-full border border-black px-5 py-5 rounded-lg">
-              <h3 className="text-xl font-bold mb-4">Places to Visit</h3>
-              <ul onDrop={()=>console.log('drop')}>
-                <li className="mb-2 border border-black bg-white p-2 rounded-lg shadow-md cursor-pointer">
-                  <details>
-                    <summary>Place 1</summary>
-                    <p>
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Eum sapiente ab iure culpa. Labore repudiandae
-                      necessitatibus beatae, deserunt totam similique.
-                    </p>
-                  </details>
-                </li>
-                <li className="mb-2 border border-black bg-white p-2 rounded-lg shadow-md cursor-pointer">
-                  <details>
-                    <summary>Place 2</summary>
-                    <p>
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Eum sapiente ab iure culpa. Labore repudiandae
-                      necessitatibus beatae, deserunt totam similique.
-                    </p>
-                  </details>
-                </li>
-                <li className="mb-2 border border-black bg-white p-2 rounded-lg shadow-md cursor-pointer">
-                  <details>
-                    <summary>Place 3</summary>
-                    <p>
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Eum sapiente ab iure culpa. Labore repudiandae
-                      necessitatibus beatae, deserunt totam similique.
-                    </p>
-                  </details>
-                </li>
-              </ul>
-            </div>
-
-            <div className="mb-8 bg-gray-100 md:w-[30%] w-full border border-black px-5 py-5 rounded-lg">
-              <h3 className="text-xl font-bold mb-4">Marked to Visited</h3>
-              <ul onDrop={drop} onDragOver={allowDrop} id='h'>
-                <li className="mb-2 border border-black bg-white p-2 rounded-lg shadow-md cursor-pointer">
-                  <details>
-                    <summary>Place 1</summary>
-                    <p>
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Eum sapiente ab iure culpa. Labore repudiandae
-                      necessitatibus beatae, deserunt totam similique.
-                    </p>
-                  </details>
-                </li>
-                <li className="mb-2 border border-black bg-white p-2 rounded-lg shadow-md cursor-pointer">
-                  <details>
-                    <summary>Place 2</summary>
-                    <p>
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Eum sapiente ab iure culpa. Labore repudiandae
-                      necessitatibus beatae, deserunt totam similique.
-                    </p>
-                  </details>
-                </li>
-                <li className="mb-2 border border-black bg-white p-2 rounded-lg shadow-md cursor-pointer">
-                  <details>
-                    <summary>Place 3</summary>
-                    <p>
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Eum sapiente ab iure culpa. Labore repudiandae
-                      necessitatibus beatae, deserunt totam similique.
-                    </p>
-                  </details>
-                </li>
-              </ul>
-            </div>
-
-            <div className="mb-8 bg-gray-100 md:w-[30%] w-full border border-black px-5 py-5 rounded-lg">
-              <h3 className="text-xl font-bold mb-4">Not Interested</h3>
-              <ul>
-                <li className="mb-2 border border-black bg-white p-2 rounded-lg shadow-md cursor-pointer" id="place" draggable onDragStart={(e)=>handleDrag(e)}>
-                  <details>
-                    <summary>Place 1</summary>
-                    <p>
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Eum sapiente ab iure culpa. Labore repudiandae
-                      necessitatibus beatae, deserunt totam similique.
-                    </p>
-                  </details>
-                </li>
-                <li className="mb-2 border border-black bg-white p-2 rounded-lg shadow-md cursor-pointer">
-                  <details>
-                    <summary>Place 2</summary>
-                    <p>
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Eum sapiente ab iure culpa. Labore repudiandae
-                      necessitatibus beatae, deserunt totam similique.
-                    </p>
-                  </details>
-                </li>
-                <li className="mb-2 border border-black bg-white p-2 rounded-lg shadow-md cursor-pointer">
-                  <details>
-                    <summary>Place 3</summary>
-                    <p>
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Eum sapiente ab iure culpa. Labore repudiandae
-                      necessitatibus beatae, deserunt totam similique.
-                    </p>
-                  </details>
-                </li>
-              </ul>
-            </div>
+          <div className="flex flex-wrap  box-border justify-between">
+          <DropBox title={"Places to Visit"} id={"placesToVisit"}  data={data}/>
+          <DropBox title={"Marked to Visited"} id={"markedToVisited"}  data={data2}/>
+          <DropBox title={"Not Interested"} id={"notInterested"}  data={data3}/>
           </div>
-
           {/* Example of cost estimation and booking options */}
           <div className="mb-8">
             <h3 className="text-xl font-bold mb-4">Estimated Cost</h3>
             <p className="text-gray-600 mb-2">Approximate Cost: $XXXX</p>
           </div>
 
-          <div className="mb-8">
-            <h3 className="text-xl font-bold mb-4">Booking Options</h3>
-            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-4">
-              Book a Hotel
-            </button>
-            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-4">
-              Book a Flight
-            </button>
-            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-4">
-              Book a Taxi
-            </button>
-          </div>
         </div>
       )}
     </div>

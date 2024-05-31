@@ -35,6 +35,20 @@ function Navbar() {
               Services
             </NavLink>
             <NavLink
+              to="/maps"
+              // activeClassName="text-blue-500 border-b-2 border-blue-500"
+              className="text-gray-800 hover:text-blue-500 transition duration-300 px-3 py-2"
+            >
+              Maps
+            </NavLink>
+            <NavLink
+              to="/experiences"
+              // activeClassName="text-blue-500 border-b-2 border-blue-500"
+              className="text-gray-800 hover:text-blue-500 transition duration-300 px-3 py-2"
+            >
+                           View Experience
+            </NavLink>
+            <NavLink
               to="/contact"
               // activeClassName="text-blue-500 border-b-2 border-blue-500"
               className="text-gray-800 hover:text-blue-500 transition duration-300 px-3 py-2"
@@ -108,6 +122,22 @@ function Navbar() {
             onClick={() => setIsOpen(false)}
           >
             Services
+          </NavLink>
+          <NavLink
+            to="/maps"
+            // activeClassName="bg-gray-100 text-gray-900"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100 transition duration-300"
+            onClick={() => setIsOpen(false)}
+          >
+            Maps
+          </NavLink>
+          <NavLink
+            to="/experiences"
+            // activeClassName="bg-gray-100 text-gray-900"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100 transition duration-300"
+            onClick={() => setIsOpen(false)}
+          >
+             View Experience
           </NavLink>
           <NavLink
             to="/contact"
