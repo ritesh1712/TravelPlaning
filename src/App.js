@@ -6,8 +6,10 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import './css/animations.css'
-import Maps from './pages/Maps';
+import Booking from './pages/Booking';
 import Experiences from './pages/Experiences';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 function App() {
   return (
@@ -16,11 +18,11 @@ function App() {
         <Routes>
           <Route path="/"  element={<Home/>} />
           <Route path="/services" element={<Services/>} />
-          <Route path="/maps" element={<Maps/>} />
+          <Route path="/booking" element={<Booking/>} />
           <Route path="/experiences" element={<Experiences/>} />
           <Route path="/contact" element={<Contact/>} />
-          <Route path="/login" element={<Contact/>} />
-          <Route path="/ragister" element={<Contact/>} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/register" element={<Register/>} />
         </Routes>
     </Router>
   );

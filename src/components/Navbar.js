@@ -6,7 +6,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-md fixed w-full z-10 top-0">
+    <nav className="bg-white shadow-md fixed w-full z-10 top-0 border-b-2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
@@ -35,11 +35,11 @@ function Navbar() {
               Services
             </NavLink>
             <NavLink
-              to="/maps"
+              to="/booking"
               // activeClassName="text-blue-500 border-b-2 border-blue-500"
               className="text-gray-800 hover:text-blue-500 transition duration-300 px-3 py-2"
             >
-              Maps
+              Booking
             </NavLink>
             <NavLink
               to="/experiences"
@@ -124,12 +124,12 @@ function Navbar() {
             Services
           </NavLink>
           <NavLink
-            to="/maps"
+            to="/booking"
             // activeClassName="bg-gray-100 text-gray-900"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100 transition duration-300"
             onClick={() => setIsOpen(false)}
           >
-            Maps
+            Booking
           </NavLink>
           <NavLink
             to="/experiences"

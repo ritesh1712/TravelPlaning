@@ -7,7 +7,7 @@ function DragElement({placeName,description,id}) {
       }
       
   return (
-    <li className="mb-2 border border-black bg-white p-2 rounded-lg shadow-md cursor-pointer" id={placeName+id} draggable onDragStart={(e)=>handleDrag(e)}>
+    <li className="mb-2 border-2 bg-gray-100 hover:border-blue-300 hover:bg-gray-200 p-2 rounded-md shadow-md cursor-pointer transition-all" id={placeName+id} draggable onDragStart={(e)=>handleDrag(e)}>
     <details>
       <summary>{placeName}</summary>
       <p>{description}</p>

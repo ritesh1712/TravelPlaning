@@ -1,7 +1,6 @@
 import React from 'react'
 import DragElement from './DragElement';
 
-
 function drop(e) {
     e.preventDefault();
    const element = e.dataTransfer.getData("element");
@@ -25,8 +24,8 @@ function drop(e) {
 
 function DropBox({title,id,data}) {
   return (
-    <div className="mb-8 bg-gray-100 md:w-[30%] w-full border border-black px-5 py-5 rounded-lg">
-    <h3 className="text-xl font-bold mb-4">{title}</h3>
+    <div className="mb-8 bg-white  md:w-[30%] w-full border-2 px-5 py-5 rounded-md shadow-md">
+    <h3 className="text-lg font-medium text-gray-600 mb-4">{title}</h3>
     <ul id={id} onDrop={drop} onDragOver={allowDrop} className="h-full">
        {
          data.map((item,i)=> <DragElement placeName={item.placeName} description={item.description} id={i} key={i}/>)
